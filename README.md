@@ -14,7 +14,7 @@ https://django-starter-two.vercel.app/
 
 ## Demo / Admin
 
-Note: The Administration part at the Demo is not configured and will not work
+The Administration Backend at the Demo is using a MySQL but can also work with a SQLite DB for developement locally
 
 ## How it Works
 

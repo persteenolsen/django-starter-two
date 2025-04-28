@@ -1,17 +1,8 @@
-# example/views.py
+from django.http import HttpResponse
 from datetime import datetime
 
-from django.http import HttpResponse
+from django.template import loader
+
 def index(request):
-    now = datetime.now()
-    html = f'''
-    <html>
-        <body>
-            <h1>Hello from Python + Django + MySQL hosted at Vercel Cloud</h1>
-            <p>The current time is { now }.</p>
-            <p>Note: The Administration part is able to use both SQLlite and MySQL :-) </p>
-            
-        </body>
-    </html>
-    '''
-    return HttpResponse(html)
+  template = loader.get_template('index.html')
+  return HttpResponse(template.render())

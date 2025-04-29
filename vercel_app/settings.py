@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-=cldztbc4jg&xl0!x673!*v2_=p$$eu)=7*f#d0#zs$44xx-h^
 # Not: Django will display a 404.html if you have created one :-)
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+ALLOWED_HOSTS = ['','127.0.0.1', '.vercel.app']
 
 
 # Application definition

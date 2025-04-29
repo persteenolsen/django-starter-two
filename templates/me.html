@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
+    <head>
+                  
+      {% include "head.html" %}  
+
+    </head>
 <body>
+
     
-{% include "menu.html" %}
+    {% include "bootstrap.html" %}
+    {% include "navbar.html" %}
+    
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
 
-<h1>Web Developer</h1>
+              <h1>Web Developer</h1>
 
-<img src="/static/pso-django.jpg" alt="Me">
+              <img src="/static/pso-django.jpg" alt="Me">
 
-<p>Per Olsen</p>
-<p>Denmark</p>
+              <p>Per Olsen</p>
+              <p>Denmark</p>
+              
+            </div>
+        </div>
+   </div>
 
 </body>
 </html>

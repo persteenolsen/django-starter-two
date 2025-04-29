@@ -2,14 +2,22 @@
 
 <html>
     <head>
-        <title>About this Web App</title>
-        <link rel="stylesheet" href='/static/styles.css'>
+               
+      {% include "head.html" %}  
+
+      <link rel="stylesheet" href='/static/styles.css'>
       
     </head>
 <body>
 
-    
-{% include "menu.html" %}
+     
+{% include "bootstrap.html" %}
+{% include "navbar.html" %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
 
 <h1>Tech used for this Web Application</h1>
 
@@ -20,9 +28,15 @@
     <li>Hosted at Vercel Cloud</li>
     <li>This About Page loads a CSS file</li>
 </ul>
-<div class="test">CSS - This is a Test using style.css</div>
+
+<p><div class="test">CSS - This is a Test using style.css</div></p>
 
 <p>The Administration part is able to use both SQLlite and MySQL </p>
+
+
+</div>
+</div>
+</div>
 
 </body>
 </html>

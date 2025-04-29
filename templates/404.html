@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        
+      {% include "head.html" %}   
+
+    </head>
 <body>
     
-{% include "menu.html" %}
+{% include "bootstrap.html" %}
+{% include "navbar.html" %}
 
-<h1>404 - Not Found</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
 
-Try to enter another URL in your Browser ...
+   <h1>404 - Not Found</h1>
 
+   Try to enter another URL in your Browser ...
+
+   </div>
+</div>
+</div>
 
 </body>
 </html>

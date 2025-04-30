@@ -178,7 +178,7 @@ https:// your project at vercel.app/static/pso-django.jpg
 
 or they the URL when running locally
 
-http://127.0.0.1:8000/static/pso-django.jpg
+`http://127.0.0.1:8000/static/pso-django.jpg`
 
 If everything is fine my photo will be displayed
 

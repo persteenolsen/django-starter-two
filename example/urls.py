@@ -5,7 +5,6 @@ from example.views import index
 
 from example.views import about
 
-
 from example.views import me
 
 

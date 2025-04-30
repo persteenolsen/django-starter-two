@@ -136,7 +136,7 @@ Make the Migration to the MySQL DB
 py manage.py makemigrations
 py manage.py migrate
 ```
-You will need to do the Migration initiannly and when / if you will add, update or delete models.py which this Django Web App does not use
+You will need to do the Migration at first and when / if you will add, update or delete models.py which this Django Web App does not use
 
 For using a SQLite developing / locally make the config in the setting file `vercel_app/settings.py`
 
@@ -182,7 +182,9 @@ http://127.0.0.1:8000/static/pso-django.jpg
 
 If everything is fine my photo will be displayed
 
-Working with css files will be the same by added css files to the dir "static"
+Working with CSS files will be the same by added CSS files to the dir "static"
+
+Now you can use images and css in your Templates
 
 ## Running Locally and take a look at the Admin Backend
 
@@ -190,4 +192,12 @@ Working with css files will be the same by added css files to the dir "static"
 python manage.py runserver
 ```
 
-The Django application is now available at `http://127.0.0.1:8000/admin`.
+The Django application is now available at `http://127.0.0.1:8000/admin`
+
+## Deployment to Vercel
+
+Take a look at the file `vercel.json`
+
+Make sure to set Debug = False in the file `vercel_app/settings.py`
+
+Happy use of Django :-)

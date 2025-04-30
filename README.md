@@ -14,7 +14,7 @@ https://django-starter-two.vercel.app/
 
 ## Demo / Admin
 
-The Administration Backend at the Demo is using a MySQL but can also work with a SQLite DB for developement locally
+The Administration Backend can use MySQL for Dev + Prod but can also work with a SQLite DB for developement locally ( Dev )
 
 ## How it Works
 
@@ -49,39 +49,22 @@ The corresponding `WSGI_APPLICATION` setting is configured to use the `app` vari
 WSGI_APPLICATION = 'vercel_app.wsgi.app'
 ```
 
-There is a single view which renders the current time in `example/views.py`:
+There are severals views in `example/views.py` which load HTML Django Templates `templates`:
 
-```python
-# example/views.py
-from datetime import datetime
-
-from django.http import HttpResponse
-
-
-def index(request):
-    now = datetime.now()
-    html = f'''
-    <html>
-        <body>
-            <h1>Hello from Vercel!</h1>
-            <p>The current time is { now }.</p>
-        </body>
-    </html>
-    '''
-    return HttpResponse(html)
-```
-
-This view is exposed a URL through `example/urls.py`:
+The views are exposed a URL through `example/urls.py`:
 
 ```python
 # example/urls.py
 from django.urls import path
 
 from example.views import index
-
+from example.views import about
+from example.views import me
 
 urlpatterns = [
     path('', index),
+    path('about', about),
+    path('me', me),
 ]
 ```
 
@@ -104,5 +87,62 @@ This example uses the Web Server Gateway Interface (WSGI) with Django to enable 
 ```bash
 python manage.py runserver
 ```
-
 Your Django application is now available at `http://127.0.0.1:8000/`.
+
+## The Admin Backend
+
+The Admin Backend is using a MySQL Database for both Dev + Prod, but is able to use a SQLite for Dev
+
+To connect to the MySQL DB install the Python package "pymysql" and the packeges from the requirements.txt
+
+```bash
+pip install -r requirements.txt
+```
+Create a Super User for the Admin Backend in the MySQL DB
+
+```bash
+py manage.py createsuperuser
+```
+
+Make the Migration to the MySQL DB
+
+```bash
+py manage.py makemigrations
+py manage.py migrate
+```
+
+## Static files for the Admin Backend and the Frontend
+
+Make sure that the Python package "whitenoise" is installed from the requirements.txt
+
+Make sure you have the line "whitenoise.middleware.WhiteNoiseMiddleware" in the 
+
+MIDDLEWARE = [] at the `vercel_app/settings.py` along with the other packages
+
+Finally, it's made accessible to the Django server inside `vercel_app/settings.py`:
+
+Note: This is needed for serving static files at Vercel - like the css for the Admin part
+
+STATIC_URL = 'static/'
+
+STATIC_ROOT = BASE_DIR/'static' 
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" #dependency whitenoise
+
+STATICFILES_DIRS = [
+
+    os.path.join(BASE_DIR, 'assets')
+]
+
+After adding any static file, run the collectstatic command which will create folder: static/
+
+```bash
+py manage.py collectstatic
+```
+
+## Running Locally and take a look at the Admin Backend
+
+```bash
+python manage.py runserver
+```
+Your Django application is now available at `http://127.0.0.1:8000/admin`.

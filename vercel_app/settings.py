@@ -158,7 +158,7 @@ USE_TZ = True
 # Note: This is needed for serving static files at Vercel - like the css for the admin part
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR/'static' #specify the directory where the collectstatic command will collect all the static files 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" #dependency whitenoise
+#STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" #dependency whitenoise
 
 # used to specify additional directories from which to load static files
 STATICFILES_DIRS = [

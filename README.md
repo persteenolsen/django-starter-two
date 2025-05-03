@@ -146,19 +146,25 @@ Find the section DATABASES = {} and add support for SQLite and comment out the M
 
 Make sure that the Python package "whitenoise" is installed from the requirements.txt
 
-Make sure you have the line "whitenoise.middleware.WhiteNoiseMiddleware" in the 
+Note: Make sure you have the line "whitenoise.middleware.WhiteNoiseMiddleware" in the 
 
 MIDDLEWARE = [] at the `vercel_app/settings.py` along with the other packages
 
 Finally, it's made accessible to the Django server inside `vercel_app/settings.py`:
 
-Note: This is needed for serving static files at Vercel - like the css for the Admin part
+Note: This is needed for serving static files at Vercel - like the CSS for the Admin part
+
+Where Django looks for the static files
 
 STATIC_URL = 'static/'
 
+Where you put your static files 'static' = 'static ' ( Need to match the above )
+
 STATIC_ROOT = BASE_DIR/'static' 
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" #dependency whitenoise
+Note: The below statement may not be needed because whitenoise defination in Middleware section !!
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 STATICFILES_DIRS = [
 

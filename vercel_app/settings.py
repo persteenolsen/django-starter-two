@@ -156,11 +156,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
- # Settings for serving all kind of static files for Backend Admin and Frontend:
- # Debug = False
- # Note: Create initially a global 'static' folder with your files a run the command:
- # "python manage.py collectstatic" and make a commit to GitHub for be ready for Dev + Prod
+# Settings for serving all kind of static files for Backend Admin and Frontend:
+# Debug = False
+# Note: Create initially a global 'static' folder with your files a run the command:
+# "python manage.py collectstatic" and make a commit to GitHub for be ready for Dev + Prod
+# Where Django looks for static files
 STATIC_URL = 'static/'
+
+# Where you put your static files ( The dir static needs to match the above static )
 STATIC_ROOT = BASE_DIR/'static' 
 
 # Maybe not needed for serving static files ...

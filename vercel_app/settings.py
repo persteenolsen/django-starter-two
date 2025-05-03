@@ -169,8 +169,8 @@ STATIC_ROOT = BASE_DIR/'static'
 # Specify additional directories from which to load static files
 STATICFILES_DIRS = [
 
-    # os.path.join(BASE_DIR, 'assets')
-    BASE_DIR/'assets'
+   os.path.join(BASE_DIR, 'assets')
+   # BASE_DIR/'assets'
 ]
 
 

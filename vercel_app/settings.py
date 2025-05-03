@@ -158,6 +158,8 @@ USE_TZ = True
 
  # For serving all kind of static files in a correct way use Debug = False
  # This setting is neeeded for serving static files frontend and backend admin
+ # Note: Create initially a global static folder with your files a run the command:
+ # "python manage.py collectstatic" and make a commit to GitHub
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR/'static' 
 

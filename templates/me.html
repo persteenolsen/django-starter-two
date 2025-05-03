@@ -11,6 +11,7 @@
     {% include "bootstrap.html" %}
     {% include "navbar.html" %}
     
+    {% load static %}
     
     <div class="container">
         <div class="row">
@@ -18,7 +19,7 @@
 
               <h1>Web Developer</h1>
 
-              <img src="/static/pso-django.jpg" alt="Me">
+              <img src="{% static 'pso-django.jpg' %}" alt="Me">
 
               <p>Per Olsen</p>
               <p>Denmark</p>

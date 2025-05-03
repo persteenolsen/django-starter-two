@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -166,9 +165,10 @@ STATIC_ROOT = BASE_DIR/'static'
 # Dependency whitenoise
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" 
 
-# used to specify additional directories from which to load static files
+# Maybe not needed for serving static files ...
+# Specify additional directories from which to load static files
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets')
+    os.path.join(BASE_DIR, '/assets')
 ]
 
 

@@ -40,13 +40,19 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+
+    # For serving static files
     'django.contrib.staticfiles',
     'example'
 ]
 
 MIDDLEWARE = [
+    
+     # For serving all kind of static files in a correct way use Debug = False
+     # This setting is neeeded for serving static files frontend and backend admin
+     "whitenoise.middleware.WhiteNoiseMiddleware",
+
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -99,7 +105,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-#ATLAS_URI = os.getenv('ATLAS_URI')
 DB_ENGINE=os.getenv('DB_ENGINE')
 DB_NAME=os.getenv('DB_NAME')
 DB_USER=os.getenv('DB_USER')
@@ -152,13 +157,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-#STATIC_URL = 'static/'
-#STATIC_ROOT = BASE_DIR / 'staticfiles' / 'static'
-
-# Note: This is needed for serving static files at Vercel - like the css for the admin part
+ # For serving all kind of static files in a correct way use Debug = False
+ # This setting is neeeded for serving static files frontend and backend admin
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR/'static' #specify the directory where the collectstatic command will collect all the static files 
-#STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" #dependency whitenoise
+STATIC_ROOT = BASE_DIR/'static' 
+
+# Maybe not needed for serving static files ...
+# Dependency whitenoise
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" 
 
 # used to specify additional directories from which to load static files
 STATICFILES_DIRS = [

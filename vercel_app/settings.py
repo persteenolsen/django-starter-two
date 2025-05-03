@@ -156,10 +156,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
- # For serving all kind of static files in a correct way use Debug = False
- # This setting is neeeded for serving static files frontend and backend admin
- # Note: Create initially a global static folder with your files a run the command:
- # "python manage.py collectstatic" and make a commit to GitHub
+ # Settings for serving all kind of static files for Backend Admin and Frontend:
+ # Debug = False
+ # Note: Create initially a global 'static' folder with your files a run the command:
+ # "python manage.py collectstatic" and make a commit to GitHub for be ready for Dev + Prod
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR/'static' 
 
@@ -167,14 +167,14 @@ STATIC_ROOT = BASE_DIR/'static'
 # Dependency whitenoise
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" 
 
-# Specify additional directories from which to load static files
-# Run the command "python manage.py collectstatic" and make a commit to GitHub
-# Now the static files will be copied to the static directory 
+# Additional directory from which to load static files if wanted
+# Note: Create a global dir 'assets' locally with your additional static files and run: 
+# "python manage.py collectstatic"
+# Now the static files in the 'assets' dir are copied to the 'static' directory  
+# Commit to GitHub for this to work in production ( At Vercel )
 STATICFILES_DIRS = [
    
-   # An Extra dir named assets to put your files
-   # This could be a global dir if the Django project has more than one App 
-   #os.path.join(BASE_DIR, 'assets')
+   # Extra dir put your files 
    BASE_DIR/'assets' 
 ]
 

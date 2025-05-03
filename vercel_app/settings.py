@@ -165,12 +165,15 @@ STATIC_ROOT = BASE_DIR/'static'
 # Dependency whitenoise
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" 
 
-# Maybe not needed / working for serving static files ...
 # Specify additional directories from which to load static files
+# Run the command "python manage.py collectstatic" and make a commit to GitHub
+# Now the static files will be copied to the static directory 
 STATICFILES_DIRS = [
-
-   os.path.join(BASE_DIR, 'assets')
-   # BASE_DIR/'assets'
+   
+   # An Extra dir named assets to put your files
+   # This could be a global dir if the Django project has more than one App 
+   #os.path.join(BASE_DIR, 'assets')
+   BASE_DIR/'assets' 
 ]
 
 

@@ -165,10 +165,10 @@ STATIC_ROOT = BASE_DIR/'static'
 # Dependency whitenoise
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" 
 
-# Maybe not needed for serving static files ...
+# Maybe not needed / working for serving static files ...
 # Specify additional directories from which to load static files
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '/assets')
+    os.path.join(BASE_DIR, 'assets')
 ]
 
 

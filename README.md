@@ -4,7 +4,7 @@
 
 This example shows how to use Django 4 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
 
-Last updated: 03-05-2025
+Last updated: 04-05-2025
 
 Node version selected at Vercel Cloud: 22
 
@@ -18,7 +18,7 @@ https://django-starter-two.vercel.app/
 - Make sure that you have installed Python and Django by the commands in Powershell: "python --version"
 - Download the Python extension for Visual Studio Code which automatically include the Pylance extionsion
 - Download / fork this Django Starter Web App from my GitHub
-- Create the virtual envirement ".venv" for the Flask Web App by Powershell or by VS Code
+- Create the virtual envirement ".venv" for the Django Web App by Powershell or by VS Code
 - Virtual Enviroment by VS Code: "View - Command Palette - Python Create Enviroment"
 
 
@@ -168,7 +168,9 @@ STATIC_ROOT = BASE_DIR/'static'
 
 The files in the dir 'asset' will be copied to the dir 'static' after running
 
-"python manage.py collectstatic"
+```bash
+py manage.py collectstatic
+```
 
 STATICFILES_DIRS = [
 
@@ -206,8 +208,16 @@ The Django application is now available at `http://127.0.0.1:8000/admin`
 
 ## Deployment to Vercel
 
+Make sure that your satic files are ready by running
+
+```bash
+py manage.py collectstatic
+```
+
 Take a look at the file `vercel.json`
 
 Make sure to set Debug = False in the file `vercel_app/settings.py`
+
+Make a commit to your GitHub and your Django will build and deploy
 
 Happy use of Django :-)

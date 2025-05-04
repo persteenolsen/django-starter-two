@@ -30,7 +30,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -67,6 +66,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
          
          # Added the URL for work with templates
+         # Initially create the dir 'templates' at root level
+         # Root level is fine because there is only one Django App in the Project
          # 'DIRS': [],
         'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
@@ -158,7 +159,8 @@ USE_TZ = True
 
 # Settings for serving all kind of static files for Backend Admin and Frontend:
 # Debug = False
-# Note: Create initially a global 'static' folder with your files a run the command:
+# There are only one Django App in the Project and the dir 'static' and 'assets' are at root level
+# Note: Initially create the dir 'static' with your static files a run the command:
 # "python manage.py collectstatic" and make a commit to GitHub for be ready for Dev + Prod
 # Where Django looks for static files
 STATIC_URL = 'static/'
@@ -166,12 +168,8 @@ STATIC_URL = 'static/'
 # Where you put your static files ( The dir static needs to match the above static )
 STATIC_ROOT = BASE_DIR/'static' 
 
-# Maybe not needed for serving static files ...
-# Dependency whitenoise
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" 
-
 # Additional directory from which to load static files if wanted
-# Note: Create a global dir 'assets' locally with your additional static files and run: 
+# Note: Create a root level dir 'assets' locally with your additional static files and run: 
 # "python manage.py collectstatic"
 # Now the static files in the 'assets' dir are copied to the 'static' directory  
 # Commit to GitHub for this to work in production ( At Vercel )

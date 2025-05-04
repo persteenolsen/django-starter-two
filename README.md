@@ -144,6 +144,8 @@ Find the section DATABASES = {} and add support for SQLite and comment out the M
 
 ## Static files for the Admin Backend and the Frontend
 
+There are only one Django App in the Project and the dir 'static' and 'assets' are at root level
+
 Make sure that the Python package "whitenoise" is installed from the requirements.txt
 
 Note: Make sure you have the line "whitenoise.middleware.WhiteNoiseMiddleware" in the 
@@ -162,9 +164,11 @@ Where you put your static files 'static' = 'static ' ( Need to match the above )
 
 STATIC_ROOT = BASE_DIR/'static' 
 
-Note: The below statement may not be needed because whitenoise defination in Middleware section !!
+# Additional directory from which to load static files if wanted
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+The files in the dir 'asset' will be copied to the dir 'static' after running
+
+"python manage.py collectstatic"
 
 STATICFILES_DIRS = [
 

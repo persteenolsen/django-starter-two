@@ -114,7 +114,7 @@ Your Django application is now available at `http://127.0.0.1:8000/`.
 
 The Admin Backend is using a MySQL Database for both Dev + Prod, but is able to use a SQLite for Dev
 
-To connect to the MySQL DB install the Python package "pymysql" and the packeges from the requirements.txt
+To connect to the MySQL install the Python package "pymysql" and the packeges from the requirements.txt
 
 ```bash
 pip install -r requirements.txt
@@ -124,7 +124,7 @@ Take a look at the files needed for connect to MySQL: `vercel_app/mysql_setup.py
 
 `vercel_app/__init__.py`
 
-Create a Super User for the Admin Backend in the MySQL DB
+Create a Super User for the Admin Backend in the MySQL
 
 ```bash
 py manage.py createsuperuser
@@ -144,23 +144,21 @@ Find the section DATABASES = {} and add support for SQLite and comment out the M
 
 ## Static files for the Admin Backend and the Frontend
 
-There is only one Django App in the Project and the dir 'static' and 'assets' are at root level
+There is only one Django App in the Project and the dir 'static' and 'assets' can be created at root level
 
-Make sure that the Python package "whitenoise" is installed from the requirements.txt
+Make sure that the Python package 'whitenoise' is installed from the requirements.txt
 
-Note: Make sure you have the line "whitenoise.middleware.WhiteNoiseMiddleware" in the 
+Note: Make sure you have the line 'whitenoise.middleware.WhiteNoiseMiddleware' in the 
 
 MIDDLEWARE = [] at the `vercel_app/settings.py` along with the other packages
 
-Finally, it's made accessible to the Django server inside `vercel_app/settings.py`:
+Finally, take a look at `vercel_app/settings.py`:
 
-Note: This is needed for serving static files at Vercel - like the CSS for the Admin part
-
-Where Django looks for the static files
+Find where Django now looks for the static files
 
 STATIC_URL = 'static/'
 
-Where you put your static files 'static' = 'static ' ( Need to match the above )
+Where you put your static files in the dir 'static'
 
 STATIC_ROOT = BASE_DIR/'static' 
 
@@ -172,18 +170,20 @@ The files in the dir 'asset' will be copied to the dir 'static' after running
 py manage.py collectstatic
 ```
 
+The static files for the Admin Backend will also be created in the dir 'static' by the above command
+
 STATICFILES_DIRS = [
 
     os.path.join(BASE_DIR, 'assets')
 ]
 
-## Check that Django is serving Static files by URL
+## Check that Django is serving static files by URL
 
 Type the URL in your Browser after deployment to Vercel
 
 https:// your project at vercel.app/static/pso-django.jpg
 
-or they the URL when running locally
+or the URL when running locally
 
 `http://127.0.0.1:8000/static/pso-django.jpg`
 
@@ -191,7 +191,7 @@ If everything is fine my photo will be displayed
 
 When working with CSS files you will need to added them to the dir 'static' and test like above
 
-Now you can use images and css in your Templates
+Now you can use images and CSS in your Templates
 
 ## Running Locally and take a look at the Admin Backend
 
@@ -203,7 +203,7 @@ The Django application is now available at `http://127.0.0.1:8000/admin`
 
 ## Deployment to Vercel
 
-Make sure that your satic files are ready by running
+Make sure that your static files are ready by running
 
 ```bash
 py manage.py collectstatic

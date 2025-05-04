@@ -120,7 +120,7 @@ To connect to the MySQL install the Python package "pymysql" and the packages fr
 pip install -r requirements.txt
 ```
 
-Take a look at the files needed for connect to MySQL: `vercel_app/mysql_setup.py` and 
+Take a look at the files needed for connecting to MySQL: `vercel_app/mysql_setup.py` and 
 
 `vercel_app/__init__.py`
 
@@ -189,9 +189,9 @@ or the URL when running locally
 
 If everything is fine my photo will be displayed
 
-When working with CSS files you will need to add them to the dir 'static' and test like above
+The CSS files can be tested the same way like the .jpg above
 
-Now you can use images and CSS in your Templates
+Now you can use the images and CSS in your Templates
 
 ## Running Locally and take a look at the Admin Backend
 

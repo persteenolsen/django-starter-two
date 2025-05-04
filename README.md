@@ -1,6 +1,6 @@
 
 
-# Django + MySQL + Vercel
+# Python + Django + MySQL + Vercel
 
 This example shows how to use Django 4 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
 

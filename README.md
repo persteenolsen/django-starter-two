@@ -95,7 +95,9 @@ urlpatterns = [
 
 ## Templates
 
-To use templates create the dir "templates" and put the HTML files there
+To use templates create the dir 'templates' at root level and put the HTML files there
+
+There is only one Django App in the Project and the dir 'templates' can be at root level
 
 Tell Django where to look for Templates by `example/settings.py`:
 
@@ -144,7 +146,7 @@ Find the section DATABASES = {} and add support for SQLite and comment out the M
 
 ## Static files for the Admin Backend and the Frontend
 
-There are only one Django App in the Project and the dir 'static' and 'assets' are at root level
+There is only one Django App in the Project and the dir 'static' and 'assets' are at root level
 
 Make sure that the Python package "whitenoise" is installed from the requirements.txt
 
@@ -164,7 +166,7 @@ Where you put your static files 'static' = 'static ' ( Need to match the above )
 
 STATIC_ROOT = BASE_DIR/'static' 
 
-# Additional directory from which to load static files if wanted
+## Additional directory from which to load static files if wanted
 
 The files in the dir 'asset' will be copied to the dir 'static' after running
 

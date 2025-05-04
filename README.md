@@ -1,6 +1,6 @@
 
 
-# Django + Vercel
+# Django + MySQL + Vercel
 
 This example shows how to use Django 4 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
 
@@ -12,9 +12,7 @@ Node version selected at Vercel Cloud: 22
 
 https://django-starter-two.vercel.app/
 
-## Demo / Admin
-
-# Installing
+## Installing
 
 - Download Python from the official website [Python](https://python.org/)
 - Make sure that you have installed Python and Django by the commands in Powershell: "python --version"

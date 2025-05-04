@@ -15,7 +15,7 @@ https://django-starter-two.vercel.app/
 ## Installing
 
 - Download Python from the official website [Python](https://python.org/)
-- Make sure that you have installed Python and Django by the commands in Powershell: "python --version"
+- Make sure that you have installed Python by the command in Powershell: "python --version"
 - Download the Python extension for Visual Studio Code which automatically include the Pylance extionsion
 - Download / fork this Django Starter Web App from my GitHub
 - Create the virtual envirement ".venv" for the Django Web App by Powershell or by VS Code
@@ -177,11 +177,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'assets')
 ]
 
-After adding any static file, run the collectstatic command which will create folder: static/
-
-```bash
-py manage.py collectstatic
-```
 ## Check that Django is serving Static files by URL
 
 Type the URL in your Browser after deployment to Vercel
@@ -194,7 +189,7 @@ or they the URL when running locally
 
 If everything is fine my photo will be displayed
 
-Working with CSS files will be the same by added CSS files to the dir "static"
+When working with CSS files you will need to added them to the dir 'static' and test like above
 
 Now you can use images and css in your Templates
 

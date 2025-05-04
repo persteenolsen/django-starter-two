@@ -189,7 +189,7 @@ or the URL when running locally
 
 If everything is fine my photo will be displayed
 
-When working with CSS files you will need to added them to the dir 'static' and test like above
+When working with CSS files you will need to add them to the dir 'static' and test like above
 
 Now you can use images and CSS in your Templates
 

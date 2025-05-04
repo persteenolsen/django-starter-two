@@ -215,4 +215,8 @@ Make sure to set Debug = False in the file `vercel_app/settings.py`
 
 Make a commit to your GitHub and your Django will build and deploy
 
+## Things for improvement
+
+You could try to add a model.py for the Admin Backend + Frontend
+
 Happy use of Django :-)

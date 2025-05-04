@@ -114,7 +114,7 @@ Your Django application is now available at `http://127.0.0.1:8000/`.
 
 The Admin Backend is using a MySQL Database for both Dev + Prod, but is able to use a SQLite for Dev
 
-To connect to the MySQL install the Python package "pymysql" and the packeges from the requirements.txt
+To connect to the MySQL install the Python package "pymysql" and the packages from the requirements.txt
 
 ```bash
 pip install -r requirements.txt

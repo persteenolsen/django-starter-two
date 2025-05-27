@@ -4,7 +4,7 @@
 
 This example shows how to use Django 4 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
 
-Last updated: 26-05-2025
+Last updated: 27-05-2025
 
 Node version selected at Vercel Cloud: 22
 
@@ -218,5 +218,34 @@ Make a commit to your GitHub and your Django will build and deploy
 ## Things for improvement
 
 You could try to add a model.py for the Admin Backend + Frontend
+
+## Models
+
+Add a simple Model "Post" to be administrated by the Admin Backend and displayed by the Frontend
+
+- Create a file `example/models.py` with your new Model Post
+
+- Make a regitration of your Model in `example/admin.py`
+
+- Create the View for handling the Posts `example/views.py`
+
+- Add the view / template blog in `example/urls.py`
+
+- Create a Template for display the Posts `templates/blog.html`
+
+- Create a folder with the path: `example/migrations` and run the command:
+
+```bash
+py manage.py makemigrations
+```
+
+This command will create a file for the migration of the Model to a Table in the MySQL DB
+
+- Now run the command: 
+
+```bash
+py manage.py migrate
+```
+This will create the Table Post in the DB and you are now ready for administrate the Posts by the Django Admin Backend
 
 Happy use of Django :-)

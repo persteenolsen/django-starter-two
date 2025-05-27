@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+                  
+      {% include "head.html" %}  
+
+    </head>
+<body>
+
+    
+    {% include "bootstrap.html" %}
+    {% include "navbar.html" %}
+    
+    {% load static %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+
+              <h1>Blog Posts</h1>
+              
+                <ul>
+                  {% for post in posts %}
+                  <li>{{ post.title }} - {{ post.created_at }}</li>
+                  {% endfor %}
+                </ul>
+              
+            </div>
+        </div>
+   </div>
+
+</body>
+</html>

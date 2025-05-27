@@ -2,8 +2,11 @@
 <html lang="en">
     <head>
      
-      {% include "head.html" %}  
-
+      {% include "head.html" %} 
+    
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'styles.css' %}">
+      
     </head>
 <body>
 
@@ -11,19 +14,27 @@
     {% include "bootstrap.html" %}
     {% include "navbar.html" %}
     
-    
     <div class="container">
         <div class="row">
             <div class="col-sm-6 offset-sm-3">
 
-               <h1>Python and Django Starter Web App</h1>
-
-               Please take a look the Web App by the Menu...
+               <h2>Hello, World!</h2>
+                                          
+               <p><div class="test">And this is <b>only</b> the beginning ...</div></p>
+               
+                              
+               <b>Welcome :-)</b>
+               
+               <br /> 
+               
+               <p>Discover the Tech used for building this Python and Django Website ...</p>
 
             </div>
         </div>
+         
    </div>
 
+   {% include "footer.html" %}
 
 </body>
 </html>

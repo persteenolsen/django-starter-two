@@ -5,9 +5,6 @@
                
       {% include "head.html" %}  
 
-      {% load static %}
-      <link rel="stylesheet" href="{% static 'styles.css' %}">
-      
     </head>
 <body>
 
@@ -20,9 +17,8 @@
     <div class="row">
         <div class="col-sm-6 offset-sm-3">
 
-<p><div class="test">This page is using style.css for CSS :-)</div></p>
 
-<h3>Description</h3>
+<h2>Description</h2>
 <p>A Python + Django + MySQL Web Application</p>
 
 <b>Last updated:</b>
@@ -100,6 +96,9 @@
 </div>
 </div>
 </div>
+
+
+   {% include "footer.html" %}
 
 </body>
 </html>

@@ -236,8 +236,9 @@ Add a simple Model "Post" to be administrated by the Admin Backend and displayed
 - Create a folder with the path: `example/migrations` and run the command:
 
 ```bash
-py manage.py makemigrations
+py manage.py makemigrations example
 ```
+Note: It is important to add the name of the app in the command `example` !!!
 
 This command will create a file for the migration of the Model to a Table in the MySQL DB
 

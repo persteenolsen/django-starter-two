@@ -206,7 +206,7 @@ The Django application is now available at `http://127.0.0.1:8000/admin`
 Make sure that your static files are ready by running
 
 ```bash
-py manage.py collectstatic
+python manage.py collectstatic
 ```
 
 Take a look at the file `vercel.json`

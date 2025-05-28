@@ -15,6 +15,8 @@
 
     {% include "bootstrap.html" %}
     {% include "navbar.html" %}
+    
+    {% load static %}
 
     <div class="container">
         <div class="row">
@@ -27,8 +29,12 @@
                 <p>
                 <div class="test">And this is <b>only</b> the beginning ...</div>
                 </p>
-
+                
                 <b>Welcome :-)</b>
+
+                <br /><br />
+                <img src="{% static 'python-logo.jpg' %}" alt="Python"> + 
+                <img src="{% static 'django-logo.jpg' %}" alt="Django">
 
                 <br /><br />
 

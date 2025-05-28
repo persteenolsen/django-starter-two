@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-                  
-      {% include "head.html" %}  
 
-    </head>
+<head>
+
+  {% include "head.html" %}
+
+</head>
+
 <body>
 
-    
-    {% include "bootstrap.html" %}
-    {% include "navbar.html" %}
-    
-    {% load static %}
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 offset-sm-3">
 
-              <h2>Web Developer</h2>
+  {% include "bootstrap.html" %}
+  {% include "navbar.html" %}
 
-              <img src="{% static 'pso-django.jpg' %}" alt="Me">
+  {% load static %}
 
-              <p>Per Olsen</p>
-              <p>Denmark</p>
-              
-            </div>
-        </div>
-   </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3">
 
-   
-   {% include "footer.html" %}
-   
+        <br />
+        <h2>Web Developer</h2>
+
+        <img src="{% static 'pso-django.jpg' %}" alt="Me">
+
+        <p>Per Olsen</p>
+        <p>Denmark</p>
+
+      </div>
+    </div>
+  </div>
+
+
+  {% include "footer.html" %}
+
 </body>
+
 </html>

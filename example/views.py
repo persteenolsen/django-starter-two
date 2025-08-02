@@ -20,5 +20,8 @@ from django.shortcuts import render
 from .models import Post
 
 def blog(request):
-    posts = Post.objects.all()
+    
+    # 02-08-2025 - Select * from Post order by created_at DESC
+    posts = Post.objects.all().order_by('-created_at')
+
     return render(request, 'blog.html', {'posts': posts})

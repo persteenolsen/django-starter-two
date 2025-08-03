@@ -4,7 +4,7 @@
 
 This example shows how to use Django 4 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
 
-Last updated: 02-08-2025
+Last updated: 03-08-2025
 
 Node version selected at Vercel Cloud: 22
 
@@ -28,7 +28,7 @@ The Administration Backend can use MySQL for Dev + Prod but can also work with a
 
 Our Django application, `example` is configured as an installed application in `vercel_app/settings.py`:
 
-```python
+```bash
 # vercel_app/settings.py
 INSTALLED_APPS = [
     # ...
@@ -38,21 +38,21 @@ INSTALLED_APPS = [
 
 We allow "\*.vercel.app" subdomains in `ALLOWED_HOSTS`, in addition to 127.0.0.1:
 
-```python
+```bash
 # vercel_app/settings.py
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 ```
 
 The `wsgi` module must use a public variable named `app` to expose the WSGI application:
 
-```python
+```bash
 # vercel_app/wsgi.py
 app = get_wsgi_application()
 ```
 
 The corresponding `WSGI_APPLICATION` setting is configured to use the `app` variable from the `vercel_app.wsgi` module:
 
-```python
+```bash
 # vercel_app/settings.py
 WSGI_APPLICATION = 'vercel_app.wsgi.app'
 ```
@@ -65,7 +65,7 @@ There are severals views in `example/views.py` which load HTML Django Templates 
 
 The views are exposed a URL through `example/urls.py`:
 
-```python
+```bash
 # example/urls.py
 from django.urls import path
 
@@ -81,7 +81,7 @@ urlpatterns = [
 ```
 Finally, it's made accessible to the Django server inside `vercel_app/urls.py`:
 
-```python
+```bash
 # vercel_app/urls.py
 from django.urls import path, include
 
@@ -127,14 +127,14 @@ Take a look at the files needed for connecting to MySQL: `vercel_app/mysql_setup
 Create a Super User for the Admin Backend in the MySQL
 
 ```bash
-py manage.py createsuperuser
+python manage.py createsuperuser
 ```
 
 Make the Migration to the MySQL DB
 
 ```bash
-py manage.py makemigrations
-py manage.py migrate
+python manage.py makemigrations
+python manage.py migrate
 ```
 You will need to do the Migration at first and when / if you will add, update or delete models.py which this Django Web App does not use
 
@@ -167,7 +167,7 @@ STATIC_ROOT = BASE_DIR/'static'
 The files in the dir 'asset' will be copied to the dir 'static' after running
 
 ```bash
-py manage.py collectstatic
+python manage.py collectstatic
 ```
 
 The static files for the Admin Backend will also be created in the dir 'static' by the above command
@@ -236,7 +236,7 @@ Add a simple Model "Post" to be administrated by the Admin Backend and displayed
 - Create a folder with the path: `example/migrations` and run the command:
 
 ```bash
-py manage.py makemigrations example
+python manage.py makemigrations example
 ```
 Note: It is important to add the name of the app in the command `example` !!!
 
@@ -245,7 +245,7 @@ This command will create a file for the migration of the Model to a Table in the
 - Now run the command: 
 
 ```bash
-py manage.py migrate
+python manage.py migrate
 ```
 This will create the Table Post in the DB and you are now ready for administrate the Posts by the Django Admin Backend
 

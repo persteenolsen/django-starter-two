@@ -36,15 +36,15 @@
             <td><b>Created</b></td>
           </tr>
 
-          {% for post in posts %}
+          {% for employee in employees %}
 
           <tr>
-            <td style="vertical-align: top;">{{ post.title }}</td>
-            <td>{{ post.profession }}</td>
+            <td style="vertical-align: top;">{{ employee.name }}</td>
+            <td>{{ employee.profession }}</td>
 
-            <td style="vertical-align: top;">{{ post.author }}</td>
+            <td style="vertical-align: top;">{{ employee.author }}</td>
 
-            <td>{{ post.created_at }}</td>
+            <td>{{ employee.created_at }}</td>
           </tr>
 
           {% endfor %}

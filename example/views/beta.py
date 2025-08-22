@@ -19,6 +19,6 @@ def employee(request):
     
     # 22-08-2025 - The below statement is equal to the SQL:
     # Select * from Employee order by created_at DESC
-    employees = Employee.objects.all().order_by('-created_at')
+    employees = Employee.objects.all().order_by('-name')
 
     return render(request, 'employees.html', {'employees': employees})

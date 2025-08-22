@@ -4,7 +4,7 @@
 
 This example shows how to use Django 4 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
 
-Last updated: 14-08-2025
+Last updated: 22-08-2025
 
 Node version selected at Vercel Cloud: 22
 
@@ -221,17 +221,19 @@ You could try to add a model.py for the Admin Backend + Frontend
 
 ## Models
 
-Add a simple Model "Post" to be administrated by the Admin Backend and displayed by the Frontend
+Add two simple Models "Post" and "Employee" to be administrated by the Admin Backend and displayed by the Frontend
 
-- Create a file `example/models.py` with your new Model Post
+- Create a file `example/models.py` with your new Model Post and Employee
 
-- Make a regitration of your Model in `example/admin.py`
+- Make a regitration of your Models in `example/admin.py`
 
-- Create the View for handling the Posts `example/views.py`
+- Create the View for handling the Posts and Employees `example/views.py`
 
-- Add the view / template blog in `example/urls.py`
+- Add the view / template blog and employees in `example/urls.py`
 
 - Create a Template for display the Posts `templates/blog.html`
+
+- Create a Template for display the Employees `templates/employees.html`
 
 - Create a folder with the path: `example/migrations` and run the command:
 
@@ -240,13 +242,13 @@ python manage.py makemigrations example
 ```
 Note: It is important to add the name of the app in the command `example` !!!
 
-This command will create a file for the migration of the Model to a Table in the MySQL DB
+This command will create a file for the migration of the Models to two Table in the MySQL DB
 
 - Now run the command: 
 
 ```bash
 python manage.py migrate
 ```
-This will create the Table Post in the DB and you are now ready for administrate the Posts by the Django Admin Backend
+This will create the Tables Post and Employee in the DB and you are now ready for administrate the Posts and Employees by the Django Admin Backend
 
 Happy use of Django :-)

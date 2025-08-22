@@ -1,16 +1,15 @@
-'''from django.db import models
+from django.db import models
 
-class Post(models.Model):
+class Employee(models.Model):
     
-    title = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     
     # This field was added when the program was already in use and in production
     author = models.CharField(max_length=100,default='Admin')
 
-    content = models.TextField()
+    profession = models.TextField()
 
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.title
-    '''
+        return self.name

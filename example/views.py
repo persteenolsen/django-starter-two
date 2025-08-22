@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+'''from django.http import HttpResponse
 from datetime import datetime
 
 from django.template import loader
@@ -26,3 +26,4 @@ def blog(request):
     posts = Post.objects.all().order_by('-created_at')
 
     return render(request, 'blog.html', {'posts': posts})
+    '''

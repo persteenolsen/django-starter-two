@@ -7,7 +7,9 @@ class Employee(models.Model):
     # This field was added when the program was already in use and in production
     author = models.CharField(max_length=100,default='Admin')
 
-    profession = models.TextField()
+    # This field was changed when the program was already in use and in production
+    # profession = models.TextField()
+    profession = models.CharField(max_length=100)
 
     created_at = models.DateTimeField(auto_now_add=True)
 

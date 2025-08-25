@@ -28,6 +28,7 @@
 
                 <form method="POST">
                     {% csrf_token %}
+                    Enter up to 50 characters:<br />
                     <input type="text" name="task" value="{{ todo.task }}">
                     <label for="completed">Completed</label>
                     <input type="checkbox" name="completed" {% if todo.completed %}checked{% endif %}>

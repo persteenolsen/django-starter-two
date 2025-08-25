@@ -10,9 +10,14 @@ def list_todos(request):
 # Create a new Todo
 def create_todo(request):
     if request.method == 'POST':
-        task = request.POST['task']
-        Todo.objects.create(task=task)
-        return redirect('list_todos')
+
+        # Max 10 rows in the DB
+        numberoftodos = Todo.objects.all().count()
+        if numberoftodos < 10 :
+           task = request.POST['task']
+           Todo.objects.create(task=task)
+           return redirect('list_todos')
+        return render(request, 'create_todo.html', {'numberoftodos': numberoftodos})
     return render(request, 'create_todo.html')
 
 # Update a Todo

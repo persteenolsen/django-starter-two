@@ -23,10 +23,17 @@
                 <br />
 
                 <h2>Add Todo</h2>
+               
+                <b>Note:</b> There can only be 10 Todos in the Database !<br />
+                
+                {% if numberoftodos > 9 %}
+                <p><div style="color:red">The Todo was not Added ! <br />
+                     There are already {{ numberoftodos }} Todos in the Database which is the Limit!</div></p>
+                {% endif %}
 
                 <form method="POST">
                     {% csrf_token %}
-                    <input type="text" name="task" placeholder="Enter your task">
+                    <input type="text" name="task" placeholder="Enter up to 50 characters">
                     <button class="btn btn-primary" type="submit">Add Task</button>
                 </form>
                 <a href="{% url 'list_todos' %}">Back to list</a>

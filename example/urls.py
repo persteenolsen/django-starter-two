@@ -29,7 +29,7 @@ urlpatterns = [
     path('employee', employee),
 
     path('todos/', list_todos, name='list_todos'),
-    path('create/', create_todo, name='create_todo'),
-    path('update/<int:todo_id>/', update_todo, name='update_todo'),
-    path('delete/<int:todo_id>/', delete_todo, name='delete_todo'),
+    path('todo-create/', create_todo, name='create_todo'),
+    path('todo-update/<int:todo_id>/', update_todo, name='update_todo'),
+    path('todo-delete/<int:todo_id>/', delete_todo, name='delete_todo'),
 ]

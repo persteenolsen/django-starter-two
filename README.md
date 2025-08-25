@@ -4,7 +4,7 @@
 
 This example shows how to use Django 4 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
 
-Last updated: 24-08-2025
+Last updated: 25-08-2025
 
 Node version selected at Vercel Cloud: 22
 
@@ -221,19 +221,21 @@ You could try to add a model.py for the Admin Backend + Frontend
 
 ## Models
 
-Add two simple Models "Post" and "Employee" to be administrated by the Admin Backend and displayed by the Frontend
+Add three simple Models "Post", "Employee" and "Todo" to be administrated by the Admin Backend and displayed by the Frontend. The "Todo" can be adminstrated by the Frontend by CRUD
 
-- Create a file `example/models.py` with your new Model Post and Employee
+- Create a file `example/models.py` with your new Model Post Employee and Todo
 
 - Make a regitration of your Models in `example/admin.py`
 
-- Create the View for handling the Posts and Employees `example/views.py`
+- Create the View for handling the Posts Employees and Todos `example/views.py`
 
-- Add the view / template blog and employees in `example/urls.py`
+- Add the view / template blog employees and todos in `example/urls.py`
 
 - Create a Template for display the Posts `templates/blog.html`
 
 - Create a Template for display the Employees `templates/employees.html`
+
+- Create a Template for display the Todos `templates/todos.html`
 
 - Create a folder with the path: `example/migrations` and run the command:
 
@@ -242,13 +244,13 @@ python manage.py makemigrations example
 ```
 Note: It is important to add the name of the app in the command `example` !!!
 
-This command will create a file for the migration of the Models to two Table in the MySQL DB
+This command will create a file for the migration of the Models to three Tables in the MySQL DB
 
 - Now run the command: 
 
 ```bash
 python manage.py migrate
 ```
-This will create the Tables Post and Employee in the DB and you are now ready for administrate the Posts and Employees by the Django Admin Backend
+This will create the Tables Post Employee and Todo in the DB and you are now ready for administrate the Posts Employees and Todo by the Django Admin Backend
 
 Happy use of Django :-)

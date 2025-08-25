@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    {% include "head.html" %}
+
+    <meta name="description" content="Description of this Python and Django Website">
+    <title>Update Todo</title>
+
+</head>
+
+<body>
+
+    {% include "bootstrap.html" %}
+    {% include "navbar.html" %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+
+                <br />
+
+                <h2>Update Todo</h2>
+
+                <br />
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="task" value="{{ todo.task }}">
+                    <label for="completed">Completed</label>
+                    <input type="checkbox" name="completed" {% if todo.completed %}checked{% endif %}>
+                    <button class="btn btn-primary" type="submit">Update</button>
+                </form>
+                <a href="{% url 'list_todos' %}">Back to list</a>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    {% include "footer.html" %}
+
+</body>
+
+</html>

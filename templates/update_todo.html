@@ -26,14 +26,33 @@
 
                 <br />
 
+                 {% if form.errors %}
+                   <div style='color:red'>Input Error</div>
+                   
+                   {{ form.errors.task }} 
+                   
+                   <!--{% for error in form.errors %} 
+                     <p>{{error}}</p>
+                   {% endfor%}-->
+
+                {% endif %}
+                
+
                 <form method="POST">
                     {% csrf_token %}
-                    Enter up to 50 characters:<br />
+                    Enter up to 25 characters:<br />
                     <input type="text" name="task" value="{{ todo.task }}">
                     <label for="completed">Completed</label>
                     <input type="checkbox" name="completed" {% if todo.completed %}checked{% endif %}>
                     <button class="btn btn-primary" type="submit">Update</button>
                 </form>
+
+                <!--<form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input class="btn btn-primary" type="submit" value="Submit">
+                </form>-->
+
                 <a href="{% url 'list_todos' %}">Back to list</a>
 
 

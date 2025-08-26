@@ -23,16 +23,18 @@
                 <br />
 
                 <h2>Add Todo</h2>
-
+                                 
                 {% if form.errors %}
-                   <div style='color:red'>Input Error</div>
-                   
-                   {{ form.errors.task }} 
-                   
-                   <!--{% for error in form.errors %} 
-                     <p>{{error}}</p>
-                   {% endfor%}-->
-
+                   <p>
+                    <div style='color:red'>Input Error:</div>
+               
+                   <!--Note: For some reason the error message shows two times -->
+                   <!--{{ form.errors.task }}-->
+                
+                   <!--Display the only first error message of the dublicate messages-->
+                   {{ form.errors.task.0 }}
+                </p>
+               
                 {% endif %}
                 
                 <b>Note:</b> There can only be 10 Todos in the Database !<br />
@@ -42,9 +44,10 @@
                      There are already {{ numberoftodos }} Todos in the Database which is the Limit!</div></p>
                 {% endif %}
 
-                <form method="POST">
+               <form method="POST">
                     {% csrf_token %}
                     <input type="text" name="task" placeholder="Enter up to 25 characters">
+                    
                     <button class="btn btn-primary" type="submit">Add Task</button>
                 </form>
                 

@@ -26,6 +26,7 @@ def create_todo(request):
     else:
         form = TodoForm()
     return render(request, 'create_todo.html', {'form': form})
+   
 
 # Update a Todo
 def update_todo(request, todo_id):
@@ -34,6 +35,8 @@ def update_todo(request, todo_id):
    if request.method == 'POST':
         form = TodoForm(request.POST, instance=todo)
         if form.is_valid():
+            #temp = form.cleaned_data.get("task")
+            
             form.save()
             return redirect('list_todos')
    else:

@@ -24,19 +24,18 @@
 
                 <h2>Update Todo</h2>
 
-                <br />
-
-                 {% if form.errors %}
-                   <div style='color:red'>Input Error</div>
-                   
-                   {{ form.errors.task }} 
-                   
-                   <!--{% for error in form.errors %} 
-                     <p>{{error}}</p>
-                   {% endfor%}-->
-
-                {% endif %}
+                {% if form.errors %}
+                   <p>
+                    <div style='color:red'>Input Error:</div>
+               
+                   <!--Note: For some reason the error message shows two times -->
+                   <!--{{ form.errors.task }}-->
                 
+                   <!--Display the only first error message of the dublicate messages-->
+                   {{ form.errors.task.0 }}
+                </p>
+               
+                {% endif %}
 
                 <form method="POST">
                     {% csrf_token %}

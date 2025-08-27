@@ -7,7 +7,7 @@
     {% include "head.html" %}
 
     <meta name="description" content="Description of this Python and Django Website">
-    <title>Update Todo</title>
+    <title>Update Employee</title>
 
 </head>
 
@@ -22,17 +22,18 @@
 
                 <br />
 
-                <h2>Update Todo</h2>
+                <h2>Update Employee</h2>
 
                 {% if form.errors %}
                    <p>
                     <div style='color:red'>Input Error:</div>
                
                    <!--Note: For some reason the error message shows two times -->
-                   <!--{{ form.errors.task }}-->
+                   <!--{{ form.errors.name }}-->
                 
                    <!--Display the only first error message of the dublicate messages-->
-                   {{ form.errors.task.0 }}
+                   {{ form.errors.name.0 }}<br />
+                   {{ form.errors.profession.0 }}<br />
                 </p>
                
                 {% endif %}
@@ -40,9 +41,19 @@
                 <form method="POST">
                     {% csrf_token %}
                     Enter up to 25 characters:<br />
-                    <input type="text" name="task" value="{{ todo.task }}">
-                    <label for="completed">Completed</label>
-                    <input type="checkbox" name="completed" {% if todo.completed %}checked{% endif %}>
+
+                    <label for="name">Name</label>
+                    <input type="text" name="name" value="{{ employee.name }}"><br />
+                    
+                    <label for="author">Author (Read only)</label>
+                    <input readonly type="text" name="author" value="{{ employee.author }}"><br />
+                    <!--<select name="author" id="author">
+                       <option value="Admin">Admin</option>
+                       <option value="User">User</option>
+                    </select>-->
+                    <label for="profession">Profession</label>
+                    <input type="text" name="profession" value="{{ employee.profession }}"><br />
+
                     <button class="btn btn-primary" type="submit">Update</button>
                 </form>
                 <br />
@@ -53,7 +64,7 @@
                 <input class="btn btn-primary" type="submit" value="Submit">
                 </form>-->
 
-                <a href="{% url 'list_todos' %}">Back to list</a>
+                <a href="{% url 'list_employees' %}">Back to list</a>
 
 
             </div>

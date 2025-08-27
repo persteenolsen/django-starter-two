@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    {% include "head.html" %}
+
+    <meta name="description" content="Description of this Python and Django Website">
+    <title>Add Employee</title>
+
+</head>
+
+<body>
+
+    {% include "bootstrap.html" %}
+    {% include "navbar.html" %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+
+                <br />
+
+                <h2>Add Employee</h2>
+                                 
+                {% if form.errors %}
+                   <p>
+                    <div style='color:red'>Input Error:</div>
+               
+                   <!--Note: For some reason the error message shows two times -->
+                   <!--{{ form.errors.name }}-->
+                
+                   <!--Display the only first error message of the dublicate messages-->
+                   {{ form.errors.name.0 }}<br />
+                   {{ form.errors.profession.0 }}<br />
+
+                </p>
+               
+                {% endif %}
+                
+                <b>Note:</b> There can only be 10 Employees in the Database !<br />
+                
+                {% if numberofemployees > 9 %}
+                <p><div style="color:red">The Employee was not Added ! <br />
+                     There are already {{ numberofemployees }} Employee in the Database which is the Limit!</div></p>
+                {% endif %}
+
+               <form method="POST">
+                    {% csrf_token %}
+                                      
+                    <label for="name">Name</label>
+                    <input type="text" name="name" placeholder="Enter up to 25 characters"><br />
+                    
+                    <label for="author">Author</label>
+                    <select name="author" id="author">
+                       <option value="Admin">Admin</option>
+                       <option value="User">User</option>
+                    </select><br />
+
+                    <label for="profession">Profession</label>
+                    <input type="text" name="profession" placeholder="Enter up to 25 characters"><br />
+
+                    <button class="btn btn-primary" type="submit">Add Employee</button>
+                </form>
+                <br />
+
+                <!--<form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input class="btn btn-primary" type="submit" value="Submit">
+                </form>-->
+
+                <a href="{% url 'list_employees' %}">Back to list</a>
+
+            </div>
+        </div>
+    </div>
+
+
+    {% include "footer.html" %}
+
+</body>
+
+</html>

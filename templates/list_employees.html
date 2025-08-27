@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  {% include "head.html" %}
+
+  <meta name="description" content="Description of this Python and Django Website">
+  <title>List of Employees</title>
+
+</head>
+
+<body>
+
+  {% include "bootstrap.html" %}
+  {% include "navbar.html" %}
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3">
+
+        <br />
+
+        <h2>Employee List</h2><br />
+ 
+        <a href="{% url 'create_employee' %}">Add a new Employee</a>
+        <br /><br />
+
+         <table style="border-style:none; vertical-align: top;" cellpadding="5">
+
+          <tr>
+            <td><b>Name</b></td>
+            <td><b>Profession</b></td>
+            <td><b>Author</b></td>
+            <td><b>Created</b></td>
+          </tr>
+
+          {% for employee in employees %}
+
+          <tr>
+            <td style="vertical-align: top;">{{ employee.name }}</td>
+            <td>{{ employee.profession }}</td>
+
+            <td style="vertical-align: top;">{{ employee.author }}</td>
+
+            <td>{{ employee.created_at }}</td>
+            
+            <td>
+            <a href="{% url 'update_employee' employee.id %}">Edit</a><br />
+            <a href="{% url 'delete_employee' employee.id %}">Delete</a>
+            </td>
+
+          </tr>
+
+          {% endfor %}
+
+        </table>
+
+
+      </div>
+    </div>
+  </div>
+
+
+  {% include "footer.html" %}
+
+</body>
+
+</html>

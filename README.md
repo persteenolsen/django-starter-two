@@ -4,7 +4,7 @@
 
 This example shows how to use Django 4 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
 
-Last updated: 26-08-2025
+Last updated: 27-08-2025
 
 Node version selected at Vercel Cloud: 22
 
@@ -221,7 +221,7 @@ You could try to add a model.py for the Admin Backend + Frontend
 
 ## Models
 
-Add three simple Models "Post", "Employee" and "Todo" to be administrated by the Admin Backend and displayed by the Frontend. The "Todo" can be adminstrated by the Frontend by CRUD
+Add three simple Models "Post", "Employee" and "Todo" to be administrated by the Admin Backend and displayed by the Frontend. The "Employee" and "Todo" can also be adminstrated by the Frontend by CRUD
 
 - Create a file `example/models.py` with your new Model Post Employee and Todo
 

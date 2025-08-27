@@ -1,15 +1,13 @@
 from django.db import models
+from django.core.validators import MaxLengthValidator
 
 class Employee(models.Model):
     
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=25, validators=[MaxLengthValidator(limit_value=25)])
     
-    # This field was added when the program was already in use and in production
-    author = models.CharField(max_length=100,default='Admin')
+    author = models.CharField(max_length=25,default='Admin', validators=[MaxLengthValidator(limit_value=25)])
 
-    # This field was changed when the program was already in use and in production
-    # profession = models.TextField()
-    profession = models.CharField(max_length=100)
+    profession = models.CharField(max_length=25, validators=[MaxLengthValidator(limit_value=25)])
 
     created_at = models.DateTimeField(auto_now_add=True)
 

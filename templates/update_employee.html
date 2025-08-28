@@ -29,11 +29,12 @@
                     <div style='color:red'>Input Error:</div>
                
                    <!--Note: For some reason the error message shows two times -->
-                   <!--{{ form.errors.name }}-->
+                  <!--{{ form.errors.name }}
+                  {{ form.errors.profession }}-->
                 
                    <!--Display the only first error message of the dublicate messages-->
-                   {{ form.errors.name.0 }}<br />
-                   {{ form.errors.profession.0 }}<br />
+                  {{ form.errors.name.0 }}<br />
+                  {{ form.errors.profession.0 }}<br />
                 </p>
                
                 {% endif %}
@@ -54,7 +55,7 @@
                     <label for="profession">Profession</label>
                     <input type="text" name="profession" value="{{ employee.profession }}"><br />
 
-                    <button class="btn btn-primary" type="submit">Update</button>
+                    <button class="btn btn-primary" type="submit">Update Employee</button>
                 </form>
                 <br />
 

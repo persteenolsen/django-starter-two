@@ -9,6 +9,9 @@
   <meta name="description" content="Description of this Python and Django Website">
   <title>List of Employees</title>
 
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'styles.css' %}">
+
 </head>
 
 <body>
@@ -27,6 +30,9 @@
  
         <a href="{% url 'create_employee' %}">Add a new Employee</a>
         <br /><br />
+
+        <!--28-08-2025 - Added a scroller to avoid that the table will be too wide -->
+        <div class="autoscrollable-wrapper">
 
          <table style="border-style:none" cellpadding="5">
 
@@ -59,7 +65,8 @@
           {% endfor %}
 
         </table>
-
+        
+      </div>
 
       </div>
     </div>

@@ -4,3 +4,11 @@ body{
 }
 
 .test { color:green}
+
+
+.autoscrollable-wrapper {
+  overflow: auto;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}

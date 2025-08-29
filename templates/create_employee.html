@@ -8,13 +8,14 @@
 
     <meta name="description" content="Description of this Python and Django Website">
     <title>Add Employee</title>
-    
-    
+
+
     <style>
-          ul { 
-              color: red;
-              list-style-type: none;
-             } 
+        ul {
+            color: red;
+            list-style-type: none;
+            padding: 0px;
+        }
     </style>
 
 </head>
@@ -31,30 +32,65 @@
                 <br />
 
                 <h2>Add Employee</h2>
-                                         
-                <b>Note:</b> There can only be 10 Employees in the Database !<br />
-                
+
+                <b>Note:</b> There can only be 10 Employees in the Database !<br /><br />
+
                 {% if numberofemployees > 9 %}
-                <p><div style="color:red">The Employee was not Added ! <br />
-                     There are already {{ numberofemployees }} Employee in the Database which is the Limit!</div></p>
+                <p>
+                <div style="color:red">The Employee was not Added ! <br />
+                    There are already {{ numberofemployees }} Employee in the Database which is the Limit!</div>
+                </p>
                 {% endif %}
 
-               <form method="POST">
+                <form method="POST">
                     {% csrf_token %}
-                                      
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter up to 25 characters"><br />
-                     {{ form.errors.name }}
 
-                    <label for="author">Author</label>
-                    <select name="author" id="author">
-                       <option value="Admin">Admin</option>
-                       <option value="User">User</option>
-                    </select><br />
+                    <table style="border-style:none" cellpadding="5">
+                        <tr>
+                            <td>
+                                <label for="name">Name</label>
+                            </td>
 
-                    <label for="profession">Profession</label>
-                    <input type="text" id="profession" name="profession" placeholder="Enter up to 25 characters"><br />
-                     {{ form.errors.profession }}
+                            <td>
+                                <input type="text" id="name" name="name" placeholder="Enter up to 25 characters">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                {{ form.errors.name }}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="author">Author</label>
+                            </td>
+
+                            <td>
+                                <select name="author" id="author">
+                                    <option value="Admin">Admin</option>
+                                    <option value="User">User</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="profession">Profession</label>
+                            </td>
+                            <td>
+                                <input type="text" id="profession" name="profession"
+                                    placeholder="Enter up to 25 characters">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                {{ form.errors.profession }}
+                            </td>
+                        </tr>
+                    </table>
 
                     <button class="btn btn-primary" type="submit">Add Employee</button>
                 </form>

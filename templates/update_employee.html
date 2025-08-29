@@ -8,13 +8,14 @@
 
     <meta name="description" content="Description of this Python and Django Website">
     <title>Update Employee</title>
-    
-   
+
+
     <style>
-          ul { 
-              color: red;
-              list-style-type: none;
-             } 
+        ul {
+            color: red;
+            list-style-type: none;
+            padding: 0px;
+        }
     </style>
 
 </head>
@@ -31,26 +32,60 @@
                 <br />
 
                 <h2>Update Employee</h2>
-               
+
                 <form method="POST">
                     {% csrf_token %}
-                    Enter up to 25 characters:<br />
+                    Enter up to 25 characters:<br /><br />
 
-                    <label for="name" >Name</label>
-                    <input type="text" id="name" name="name" value="{{ employee.name }}"><br />
-                     {{ form.errors.name }}
+                    <table style="border-style:none" cellpadding="5">
+                        <tr>
+                            <td>
+                                <label for="name">Name</label>
+                            </td>
 
-                    <label for="author">Author (Read only)</label>
-                    <input readonly type="text" id="author" name="author" value="{{ employee.author }}"><br />
-                    <!--<select name="author" id="author">
-                       <option value="Admin">Admin</option>
-                       <option value="User">User</option>
-                    </select>-->
+                            <td>
+                                <input type="text" id="name" name="name" value="{{ employee.name }}">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                {{ form.errors.name }}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="author">Author (Read only)</label>
+                            </td>
+
+                            <td>
+                                <input readonly type="text" id="author" name="author"
+                                    value="{{ employee.author }}"><br />
+                                <!--<select name="author" id="author">
+                            <option value="Admin">Admin</option>
+                            <option value="User">User</option>
+                            </select>-->
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="profession">Profession</label>
+                            </td>
+                            <td>
+                                <input type="text" id="profession" name="profession" value="{{ employee.profession }}">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding-left: 0px" colspan="2">
+                                {{ form.errors.profession }}
+                            </td>
+
+                        </tr>
+                    </table>
                     
-                    <label for="profession">Profession</label>
-                    <input type="text" id="profession" name="profession" value="{{ employee.profession }}"><br />
-                    {{ form.errors.profession }}
-
                     <button class="btn btn-primary" type="submit">Update Employee</button>
                 </form>
                 <br />

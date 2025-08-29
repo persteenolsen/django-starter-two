@@ -1,9 +1,12 @@
 from django.db import models
-from django.core.validators import MaxLengthValidator
+
+# from django.core.validators import MaxLengthValidator
 
 class Todo(models.Model):
 
-    task = models.CharField(max_length=25, validators=[MaxLengthValidator(limit_value=25)])
+    # task = models.CharField(max_length=25, validators=[MaxLengthValidator(limit_value=25)])
+    # 29-08-2025 - The validation with messages is handled in the Form
+    task = models.CharField(max_length=25)
     
     completed = models.BooleanField(default=False)
 

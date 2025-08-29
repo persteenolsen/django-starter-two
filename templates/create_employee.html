@@ -28,12 +28,13 @@
                    <p>
                     <div style='color:red'>Input Error:</div>
                
-                   <!--Note: For some reason the error message shows two times -->
-                   <!--{{ form.errors.name }}-->
+                   <!--Note: 28-08-2025 - Display the Error Msg of the Employee if a User enters wrong input values -->
+                   {{ form.errors.name }}
+                   {{ form.errors.profession }}
                 
-                   <!--Display the only first error message of the dublicate messages-->
-                   {{ form.errors.name.0 }}<br />
-                   {{ form.errors.profession.0 }}<br />
+                   <!--Display only the first error message of any dublicate messages-->
+                   <!--{{ form.errors.name.0 }}<br />-->
+                   <!--{{ form.errors.profession.0 }}-->
 
                 </p>
                

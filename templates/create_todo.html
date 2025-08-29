@@ -28,11 +28,12 @@
                    <p>
                     <div style='color:red'>Input Error:</div>
                
-                   <!--Note: For some reason the error message shows two times -->
-                   <!--{{ form.errors.task }}-->
+                    <!--Note: 28-08-2025 - Display the Error Msg of the Todo if the User enter wrong input values -->
+                    {{ form.errors.task }}
                 
-                   <!--Display the only first error message of the dublicate messages-->
-                   {{ form.errors.task.0 }}
+                    <!--Display only the first error message of any the dublicate messages-->
+                    <!--{{ form.errors.task.0 }}-->
+
                 </p>
                
                 {% endif %}

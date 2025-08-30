@@ -9,6 +9,14 @@
     <meta name="description" content="Description of this Python and Django Website">
     <title>Update Todo</title>
 
+    <style>
+        ul {
+            color: red;
+            list-style-type: none;
+            padding: 0px;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -24,25 +32,36 @@
 
                 <h2>Update Todo</h2>
 
-                {% if form.errors %}
-                   <p>
-                    <div style='color:red'>Input Error:</div>
-               
-                   <!--Note: 28-08-2025 - Display the Error Msg of the Todo if the User enter wrong input values -->
-                   {{ form.errors.task }}
-                   
-                   <!--Display only the first error message of any dublicate messages-->
-                   <!--{{ form.errors.task.0 }}-->
-                </p>
-               
-                {% endif %}
-
                 <form method="POST">
                     {% csrf_token %}
-                    Enter up to 25 characters:<br />
-                    <input type="text" name="task" value="{{ todo.task }}">
-                    <label for="completed">Completed</label>
-                    <input type="checkbox" name="completed" {% if todo.completed %}checked{% endif %}>
+                    Enter up to 25 characters:<br /><br />
+
+                    <table style="border-style:none" cellpadding="5">
+                        <tr>
+                            <td>
+                                <label for="task">Todo</label>
+                            </td>
+                            <td>
+                                <input type="text" id="task" name="task" value="{{ todo.task }}">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                {{ form.errors.task }}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="completed">Completed</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="completed" name="completed" {% if todo.completed %}checked{% endif %}>
+                            </td>
+                        </tr>
+                    </table>
+
                     <button class="btn btn-primary" type="submit">Update</button>
                 </form>
                 <br />

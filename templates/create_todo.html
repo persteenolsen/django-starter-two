@@ -9,6 +9,14 @@
     <meta name="description" content="Description of this Python and Django Website">
     <title>Add Todo</title>
 
+    <style>
+        ul {
+            color: red;
+            list-style-type: none;
+            padding: 0px;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -23,36 +31,39 @@
                 <br />
 
                 <h2>Add Todo</h2>
-                                 
-                {% if form.errors %}
-                   <p>
-                    <div style='color:red'>Input Error:</div>
-               
-                    <!--Note: 28-08-2025 - Display the Error Msg of the Todo if the User enter wrong input values -->
-                    {{ form.errors.task }}
-                
-                    <!--Display only the first error message of any the dublicate messages-->
-                    <!--{{ form.errors.task.0 }}-->
 
-                </p>
-               
-                {% endif %}
-                
-                <b>Note:</b> There can only be 10 Todos in the Database !<br />
-                
+                <b>Note:</b> There can only be 10 Todos in the Database !<br /><br>
+
                 {% if numberoftodos > 9 %}
-                <p><div style="color:red">The Todo was not Added ! <br />
-                     There are already {{ numberoftodos }} Todos in the Database which is the Limit!</div></p>
+                <p>
+                <div style="color:red">The Todo was not Added ! <br />
+                    There are already {{ numberoftodos }} Todos in the Database which is the Limit!</div>
+                </p>
                 {% endif %}
 
-               <form method="POST">
+                <form method="POST">
                     {% csrf_token %}
-                    <input type="text" name="task" placeholder="Enter up to 25 characters">
-                    
-                    <button class="btn btn-primary" type="submit">Add Task</button>
+
+                    <table style="border-style:none" cellpadding="5">
+                        <tr>
+                            <td>
+                                <label for="task" id="task">Todo</label>
+                            </td>
+                            <td>
+                                <input type="text" name="task" placeholder="Enter up to 25 characters">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                {{ form.errors.task }}
+                            </td>
+                        </tr>
+                    </table>
+
+                    <button class="btn btn-primary" type="submit">Add Todo</button>
                 </form>
                 <br />
-                
+
                 <!--<form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}

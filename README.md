@@ -2,7 +2,7 @@
 
 # Python + Django + MySQL + Vercel
 
-This example shows how to use Django 4 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
+This example shows how to use Django 5 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
 
 Last updated: 30-08-2025
 
@@ -21,6 +21,23 @@ https://django-starter-two.vercel.app/
 - Create the virtual envirement ".venv" for the Django Web App by Powershell or by VS Code
 - Virtual Enviroment by VS Code: "View - Command Palette - Python Create Enviroment"
 
+## Install by Python commands in Powershell at Windows 10
+
+- python -m venv .venv
+
+- cd .venv
+
+- Scripts/activate
+
+- Copy requirements.txt to .venv 
+
+- (.venv) pip install -r requirements.txt
+
+- (.venv) pip freeze > requirements.txt
+
+- cd ../
+
+- python manage.py runserver
 
 The Administration Backend can use MySQL for Dev + Prod but can also work with a SQLite DB for developement locally ( Dev )
 

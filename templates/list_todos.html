@@ -24,19 +24,41 @@
         <br />
 
         <h2>Todo List</h2><br />
- 
+
         <a href="{% url 'create_todo' %}">Add a new Todo</a>
         <br /><br />
 
-        <ul>
-          {% for todo in todos %}
-          <li>
-            {{ todo.task }} - {% if todo.completed %}Completed{% else %}Not completed{% endif %}
-            <a href="{% url 'update_todo' todo.id %}">Edit</a>
-            <a href="{% url 'delete_todo' todo.id %}">Delete</a>
-          </li>
-          {% endfor %}
-        </ul>
+        <!--31-08-2025 - Added a scroller to avoid that the table will be too wide -->
+        <div class="autoscrollable-wrapper">
+
+          <table style="border-style:none" cellpadding="5">
+
+            <tr>
+              <td><b>Todo Task</b></td>
+              <td><b>Is completed</b></td>
+
+            </tr>
+
+            {% for todo in todos %}
+            <tr>
+
+              <td style="vertical-align: top">
+                {{ todo.task }}
+              </td>
+
+              <td style="vertical-align: top">
+                {% if todo.completed %}Completed{% else %}Not completed{% endif %}
+              </td>
+
+              <td style="vertical-align: top">
+                <a href="{% url 'update_todo' todo.id %}">Edit</a><br />
+                <a href="{% url 'delete_todo' todo.id %}">Delete</a>
+              </td>
+            </tr>
+            {% endfor %}
+
+          </table>
+        </div>
 
 
       </div>

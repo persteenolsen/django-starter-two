@@ -2,7 +2,7 @@
 
 # Python + Django + MySQL + Models + CRUD + Vercel
 
-This example shows how to use Django 5 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
+This example shows how to use Django 5.1.11 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
 
 Last updated: 31-08-2025
 

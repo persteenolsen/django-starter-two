@@ -34,7 +34,7 @@ SECRET_KEY=os.getenv('SECRET_KEY')
 
 # With DEBUG=False 404 errors will be directed to a default 404 template
 # Not: Django will display a 404.html if you have created one :-)
-# DEBUG = False
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 

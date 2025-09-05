@@ -270,7 +270,7 @@ python manage.py migrate
 ```
 This will create the Tables Post Employee and Todo in the DB and you are now ready for administrate the Posts Employees and Todo by the Django Admin Backend
 
-## Tips and trick
+## Tips and tricks
 
 Hide the Django Secret Key which keeps your app secure by signing cookies, passwords, and other sensitive data 
 

@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 
+# 05-09-2025 - loading variables for Django Secret Key + MySQL info
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -19,14 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=cldztbc4jg&xl0!x673!*v2_=p$$eu)=7*f#d0#zs$44xx-h^'
+# SECRET_KEY = 'django-insecure-=cldztbc4jg&xl0!x673!*v2_=p$$eu)=7*f#d0#zs$44xx-h^'
+# 05-09-2025 - get the secret key from env locally and from env in production
+SECRET_KEY=os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
 # With DEBUG=False 404 errors will be directed to a default 404 template
 # Not: Django will display a 404.html if you have created one :-)
-DEBUG = False
+# DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
@@ -99,11 +106,11 @@ WSGI_APPLICATION = 'vercel_app.wsgi.app'
 
 #}
 
-import os
+'''import os
 
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv()'''
 
 DB_ENGINE=os.getenv('DB_ENGINE')
 DB_NAME=os.getenv('DB_NAME')

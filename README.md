@@ -29,13 +29,17 @@ https://django-starter-two.vercel.app/
 
 - Scripts/activate
 
-- Copy requirements.txt to .venv 
+- Copy requirements.txt to .venv
 
 - (.venv) pip install -r requirements.txt
 
 - (.venv) pip freeze > requirements.txt
 
-- cd ../
+- (.venv) cd ../
+
+- (.venv) python manage.py runserver
+
+When starting the Django Website from the Vertual Enviroment (.venv) you will notice that Django 5.1.11 wil start. Otherwise you can use the Global Django if you have one installed by running:
 
 - python manage.py runserver
 

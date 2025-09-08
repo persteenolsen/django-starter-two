@@ -299,7 +299,6 @@ Now paste the following lines of code:
 
 ```bash
 >>> from django.core.management.utils import get_random_secret_key
-
 >>> print(get_random_secret_key())
 ```
 A Secrey key will be printed which you can copy and save in the .env file and by environment variables in Production
@@ -308,7 +307,6 @@ Note: You may want to have a url safe secret key if your host not allows special
 
 ```bash
 >>> import secrets
-
 >>> print(secrets.token_urlsafe(50))
 ```
 This will also print a Secret key

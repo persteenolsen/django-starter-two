@@ -274,6 +274,19 @@ python manage.py migrate
 ```
 This will create the Tables Post Employee and Todo in the DB and you are now ready for administrate the Posts Employees and Todo by the Django Admin Backend
 
+## Customize Templates of the Admin Backend
+
+I customized the Header of the Django Admin to make sure it always will have a minimum height to avoid
+that the responsive menu sometimes is hidden. That can happen when there is a lot content in some of the Admin pages like change password or when Recent History grows. In templates / admin I customized:
+
+- base.html
+
+- base_site.html
+
+- index.html
+
+- login.html
+
 ## Tips and tricks
 
 Hide the Django Secret Key which keeps your app secure by signing cookies, passwords, and other sensitive data 

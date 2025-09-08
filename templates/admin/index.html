@@ -1,0 +1,11 @@
+{% extends "admin/index.html" %}
+
+<!--08-09-2025 - The sidebar was customized -->
+{% block sidebar %}
+
+<div style="color:green">The Recent Actions can be disabled by customize the Admin Templates</div>
+
+<!--The code below will display the Recent history by default sidebar block-->
+{{block.super}}
+
+{% endblock %}

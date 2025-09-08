@@ -1,11 +1,54 @@
 {% extends "admin/index.html" %}
 
-<!--08-09-2025 - The sidebar was customized -->
+{% load i18n static %}
+
 {% block sidebar %}
 
-<div style="color:green">The Recent Actions can be disabled by customize the Admin Templates</div>
+<div id="content-related">
 
-<!--The code below will display the Recent history by default sidebar block-->
-{{block.super}}
+    <div id="recent-actions-module">
+
+        <!--08-09-2025 - Customized-->
+        <div style="color:green">The Recent Actions are customized to display 5 instead of default 10</div>
+
+        <h2>{% translate 'Recent actions' %}</h2>
+        <h3>{% translate 'My actions' %}</h3>
+        {% load log %}
+
+        <!--08-09-2025 - Customized to display a list of Recent History of 5 instead of default 10-->
+        {% get_admin_log 5 as admin_log for_user user %}
+
+        {% if not admin_log %}
+        <p>{% translate 'None available' %}</p>
+        {% else %}
+        <ul class="actionlist">
+            {% for entry in admin_log %}
+            <li
+                class="{% if entry.is_addition %}addlink{% endif %}{% if entry.is_change %}changelink{% endif %}{% if entry.is_deletion %}deletelink{% endif %}">
+                <span class="visually-hidden">{% if entry.is_addition %}{% translate 'Added:' %}{% elif entry.is_change
+                    %}{% translate 'Changed:' %}{% elif entry.is_deletion %}{% translate 'Deleted:' %}{% endif %}</span>
+                {% if entry.is_deletion or not entry.get_admin_url %}
+                {{ entry.object_repr }}
+                {% else %}
+                <a href="{{ entry.get_admin_url }}">{{ entry.object_repr }}</a>
+                {% endif %}
+                <br>
+                {% if entry.content_type %}
+                <span class="mini quiet">{% filter capfirst %}{{ entry.content_type.name }}{% endfilter %}</span>
+                {% else %}
+                <span class="mini quiet">{% translate 'Unknown content' %}</span>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</div>
+
+<!--08-09-2025 - Customized-->
+<!--<div style="color:green">The Recent Actions are customized to display 5 instead of default 10</div>-->
+
+<!--The code below will display the default sidebar instead of my customized sidebar-->
+<!--{{block.super}}-->
 
 {% endblock %}

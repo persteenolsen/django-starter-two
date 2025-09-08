@@ -295,7 +295,7 @@ Open Powershell and generate a new secret key:
 
 - python manage.py shell 
 
-Now paste the following lines of code:
+Now paste the following lines of code
 
 ```bash
 >>> from django.core.management.utils import get_random_secret_key

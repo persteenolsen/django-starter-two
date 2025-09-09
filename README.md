@@ -4,7 +4,7 @@
 
 This example shows how to use Django 5.1.11 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
 
-Last updated: 08-09-2025
+Last updated: 09-09-2025
 
 Node version selected at Vercel Cloud: 22
 
@@ -282,6 +282,8 @@ that the responsive menu sometimes is hidden. That can happen when there is a lo
 - base.html
 
 - base_site.html
+
+- base_theme_toogle.html 
 
 - index.html
 

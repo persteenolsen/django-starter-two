@@ -21,11 +21,26 @@
     {% if LANGUAGE_BIDI %}<link rel="stylesheet" href="{% static "admin/css/responsive_rtl.css" %}">{% endif %}
 {% endblock %}
 {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE">{% endblock %}
+
+<!--09-09-2025 - Customize the Django Admin by the CSS below -->
+<style>
+  :root {
+    --primary: #4d4d4d;
+    --secondary: #1a1a1a;
+    --accent: #73cba4;
+    --primary-fg: #fff;
+    --header-color: #ccffe8;
+    --darkened-bg: #f5fffa;
+  }
+</style>
+
 </head>
 
 <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}"
   data-admin-utc-offset="{% now "Z" %}">
 <a href="#content-start" class="skip-to-content-link">{% translate 'Skip to main content' %}</a>
+
+
 <!-- Container -->
 <div id="container">
 
@@ -36,8 +51,9 @@
       <!--08-09-2025 - Customized-->
       <!--Setting the Header to have a minimum height of 50 px to avoid the responsive menu
       will be hidden when having a lot of content in the Admin like Recent History -->
-      <header style="min-height:50px; background-color: #4EA24E;" id="header">
-
+      <!-- Customize the Header: background-color: #088F8F;-->
+      <header style="min-height:50px;" id="header">
+       
         <div id="branding">
           
           <!--08-09-2025 - Customized-->
@@ -70,8 +86,9 @@
                     <button type="submit">{% translate 'Log out' %}</button>
                 </form>
                 
-
+                <!--09-09-2025 - The Icon themes-->
                 {% include "admin/color_theme_toggle.html" %}
+
             {% endblock %}
         </div>
         {% endif %}
@@ -125,6 +142,7 @@
 </div>
 <!-- END Container -->
 
+<!--09-09-2025 - Icon themes -->
 <!-- SVGs -->
 <svg xmlns="http://www.w3.org/2000/svg" class="base-svgs">
   <symbol viewBox="0 0 24 24" width="1rem" height="1rem" id="icon-auto"><path d="M0 0h24v24H0z" fill="currentColor"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2V4a8 8 0 1 0 0 16z"/></symbol>

@@ -1,0 +1,20 @@
+{% load i18n %}
+<button class="theme-toggle">
+  <span class="visually-hidden theme-label-when-auto">{% translate 'Toggle theme (current theme: auto)' %}</span>
+  <span class="visually-hidden theme-label-when-light">{% translate 'Toggle theme (current theme: light)' %}</span>
+  <span class="visually-hidden theme-label-when-dark">{% translate 'Toggle theme (current theme: dark)' %}</span>
+  
+  <!--09-09-2025 - Customize theme icon below -->
+  <!--Remove the 'class="theme-icon-when-auto"' to remove the theme icon -->
+  <!--Add your own style by 'style="padding: 0px"' -->
+  <svg aria-hidden="true" class="theme-icon-when-auto" style="padding: 0px">
+    <use xlink:href="#icon-auto" />
+  </svg>
+
+  <svg aria-hidden="true" class="theme-icon-when-dark">
+    <use xlink:href="#icon-moon" />
+  </svg>
+  <svg aria-hidden="true" class="theme-icon-when-light">
+    <use xlink:href="#icon-sun" />
+  </svg>
+</button>

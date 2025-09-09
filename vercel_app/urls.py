@@ -21,6 +21,14 @@ urlpatterns = [
     path('', include('example.urls')),
 ]
 
+# 09-09-2025 - Setting the Title and Header of the Django Admin
+# instead of the default: Django Administration
+admin.site.site_title = "Website administration"
+admin.site.site_header = "Website administration"
+
+# Setting the Title and the text below the Header at the Index page when logged in
+admin.site.index_title = "Site administration"
+
 # Serving static during dev
 #if settings.DEBUG:
  #  urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -27,7 +27,7 @@ admin.site.site_title = "Website administration"
 admin.site.site_header = "Website administration"
 
 # Setting the Title and the text below the Header at the Index page when logged in
-admin.site.index_title = "Site administration"
+admin.site.index_title = "Your Site administration"
 
 # Serving static during dev
 #if settings.DEBUG:

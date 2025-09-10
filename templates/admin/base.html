@@ -22,8 +22,9 @@
 {% endblock %}
 {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE">{% endblock %}
 
-<!--09-09-2025 - Customize the Django Admin by the CSS below -->
-<style>
+<!--10-09-2025 - Customize the Django Admin by the CSS below -->
+<!--Simple customization of the Admin by CSS-->
+<!--<style>
   :root {
     --primary: #4d4d4d;
     --secondary: #1a1a1a;
@@ -32,6 +33,42 @@
     --header-color: #ccffe8;
     --darkened-bg: #f5fffa;
   }
+</style>-->
+
+<!--Customization of the Django Admins light theme by CSS-->
+<style>
+  :root {
+      --mint-green-light: #ADEBB3;
+      --mint-green-gray: #9EB8A0;
+      --mint-green: #58855C;
+      --mint-green-dark: #0D3311;
+  }
+
+  input[type="checkbox"] {
+      accent-color: var(--mint-green);
+  }
+
+  html[data-theme="light"],
+  :root {
+      --font-family-primary:
+          Roboto,
+          "Helvetica Neue",
+          Arial;
+      --secondary: rgb(20, 30, 20);
+      --accent:var(--mint-green-light);
+      --header-color: var(--accent);
+      --primary: var(--mint-green);
+      --link-fg: var(--mint-green-dark);
+      --link-hover-color: var(--mint-green);
+      --breadcrumbs-fg: var(--mint-green-light);
+      --breadcrumbs-bg: rgb(30, 40, 30);
+      --selected-row: var(--mint-green-light);
+      --button-bg: var(--mint-green-gray);
+      --default-button-bg: var(--mint-green);
+      --button-hover-bg: var(--mint-green-dark);
+      --default-button-hover-bg: var(--mint-green-dark);
+  }
+
 </style>
 
 </head>

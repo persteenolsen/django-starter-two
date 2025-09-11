@@ -1,14 +1,17 @@
+<!-- .venv / Lib / django / contrib / admin / templates / admin / base.html  -->
 {% extends "admin/base.html" %}
 
 {% load i18n static %}
 
 <!-- Header -->
 <!--11-09-2025 - This base.html extends the original base.html and only the header block is customized-->
-<!--There is no need to copy the base.html because only the header block is modified-->
+<!--There is no need to copy the content heavy base.html because only the header block is modified-->
 {% block header %}
 
-<!--Customization of the Django Admins light theme by CSS-->
-<!--Note: for customize the dark theme take a look in admin / css / dark_mode.css-->
+<!--Customization of the Django Admin light theme by CSS-->
+<!--The below css overrides the css from base.css from the Django installtion located at the path: -->
+<!-- .venv / Lib / django / contrib / admin / static / admin / css base.css -->
+<!--Note: for customize the dark theme take a look in dark_mode.css -->
 <style>
   :root {
     --mint-green-light: #ADEBB3;

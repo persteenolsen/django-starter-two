@@ -6,8 +6,13 @@
 {% block branding %}
 
 <div id="site-name">
-    
-  <!--11-09-2025 - You could customize something different before the link than ''Your -->
+  
+  <!--22-09-2025 - Small screen - After logout - Branding - Vertical align middle - Workaround -->
+  {% if user.is_anonymous %}
+  <br />
+  {% endif %}
+
+   <!--11-09-2025 - You could customize something different before the link than '>>>' -->
   >>>
 
   <a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a>
@@ -15,7 +20,12 @@
 </div>
 
 {% if user.is_anonymous %}
+
+  <!--22-09-2025 - Small screen - After logout - Theme icon - vertical align middle - Workaround -->
+  <br /><br /><br />
+
   {% include "admin/color_theme_toggle.html" %}
+
 {% endif %}
 
 {% endblock %}

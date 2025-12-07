@@ -9,18 +9,15 @@ from example.views.alpha import me
 
 from example.views.beta import blog
 
-# 27-08-2025 - Outdated !
-# from example.views.beta import employee
+from example.views.employee import list_employees
+from example.views.employee import create_employee
+from example.views.employee import update_employee
+from example.views.employee import delete_employee
 
-from example.views.beta import list_employees
-from example.views.beta import create_employee
-from example.views.beta import update_employee
-from example.views.beta import delete_employee
-
-from example.views.gamma import list_todos
-from example.views.gamma import create_todo
-from example.views.gamma import update_todo
-from example.views.gamma import delete_todo
+from example.views.todo import list_todos
+from example.views.todo import create_todo
+from example.views.todo import update_todo
+from example.views.todo import delete_todo
 
 urlpatterns = [
     
@@ -31,9 +28,6 @@ urlpatterns = [
     path('me', me),
 
     path('blog', blog),
-
-    # 27-08-2025 - Outdated !
-    # path('employee', employee),
     
     path('employees/', list_employees, name='list_employees'),
     path('employee-create/', create_employee, name='create_employee'),

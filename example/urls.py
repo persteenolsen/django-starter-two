@@ -7,7 +7,7 @@ from example.views.alpha import about
 
 from example.views.alpha import me
 
-from example.views.beta import blog
+from example.views.post import blog
 
 from example.views.employee import list_employees
 from example.views.employee import create_employee

@@ -1,4 +1,6 @@
-'''from django.db import models
+'''
+# 07-12-2025 - The Models are organized in the model folder for scalability
+from django.db import models
 
 class Post(models.Model):
     

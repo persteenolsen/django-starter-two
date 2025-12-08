@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 
 from example.models.employee import Employee
 
-from example.forms import EmployeeForm
+from example.forms.employee import EmployeeForm
 
 # List all Employees
 def list_employees(request):

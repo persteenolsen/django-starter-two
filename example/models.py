@@ -1,5 +1,5 @@
 '''
-# 07-12-2025 - The Models are organized in the model folder for scalability
+# 07-12-2025 - The Models are organized in the models folder for scalability
 from django.db import models
 
 class Post(models.Model):

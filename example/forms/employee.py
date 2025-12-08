@@ -1,18 +1,5 @@
-'''
-# 08-12-2025 - The forms are organized in the forms folder for scalability
 from django import forms
-from example.models.todo import Todo
 from example.models.employee import Employee
-
-class TodoForm(forms.ModelForm):
-
-    task = forms.CharField(error_messages={'max_length':'A Todo Task can only have 25 characters!',
-                                           'required':'A Todo Task can not be empty!'})
-    
-    class Meta:
-        model = Todo
-        fields = ['task', 'completed']
-
 
 class EmployeeForm(forms.ModelForm):
 
@@ -28,5 +15,3 @@ class EmployeeForm(forms.ModelForm):
     class Meta:
         model = Employee
         fields = ['name', 'author', 'profession']
-
-'''

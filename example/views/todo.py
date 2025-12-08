@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 from example.models.todo import Todo
-from example.forms import TodoForm
+from example.forms.todo import TodoForm
 
 # List all Todos
 def list_todos(request):

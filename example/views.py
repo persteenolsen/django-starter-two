@@ -1,5 +1,5 @@
 '''
-# 07-12-2025 - The views are organized in the view folder for scalability
+# 07-12-2025 - The views are organized in the views folder for scalability
 from django.http import HttpResponse
 from datetime import datetime
 

@@ -5,20 +5,15 @@
 <!--There is no need to copy the the base_site.html because only the branding block is modified-->
 {% block branding %}
 
-<div id="site-name">
-  
-  <!--09-12-2025 - Small screen - After logout - Adding a line break before the link - Workaround -->
-  <!--Note: In full screen the line break should not be there -->
-  <!--{% if request.path == '/admin/logout/' %}
-   <br />
-  {% endif %}-->
-
-  <!--11-09-2025 - You could customize something different before the link than '>>>' -->
+<!--09-12-2025 - Adjusting the UX for both small and big screen - After logout -->
+<div id="site-name" style="margin-left:1px;">
+    
+  <!--09-12-2025 - You could customize something different before the link than '>>>' -->
   >>>
 
   <a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a>
    
-  <!--09-12-2025 - Small screen - After logout - Theme icon - vertical align middle - Workaround -->
+  <!--09-12-2025 - Small screen - After logout -->
   {% if user.is_anonymous %}
    
    <!-- Loading the Theme icon -->

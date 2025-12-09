@@ -52,8 +52,11 @@
 <!-- Customize the Header: background-color: #088F8F;-->
 <header style="min-height:50px;" id="header">
 
-  <!--09-12-2025 - Adjusting for Vertical align for both small and big screen -->
-  <div id="branding" style="margin:auto; width: 65%; border: 1px solid #141E14; padding: 1px;">
+  <!--09-12-2025 - Adjusting for Vertical and Horizontal align for both small and big screen -->
+  <!--Production: Border color = #141E14-->
+  <!-- Dev / Testing: Border color = green-->
+  <div id="branding" style="display:flex; align-items: center; justify-content: center; border: 1px solid #141E14;">
+  
 
     {% block branding %}
     

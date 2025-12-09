@@ -17,16 +17,16 @@
 
   <a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a>
    
+  <!--09-12-2025 - Small screen - After logout - Theme icon - vertical align middle - Workaround -->
+  {% if user.is_anonymous %}
+   
+   <!-- Loading the Theme icon -->
+   {% include "admin/color_theme_toggle.html" %}
+
+  {% endif %}
+
 </div>
 
-{% if user.is_anonymous %}
-
-  <!--22-09-2025 - Small screen - After logout - Theme icon - vertical align middle - Workaround -->
-  <br /><br /><br />
-
-  {% include "admin/color_theme_toggle.html" %}
-
-{% endif %}
 
 {% endblock %}
 

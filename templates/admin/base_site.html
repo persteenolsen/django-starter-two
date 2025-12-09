@@ -7,12 +7,13 @@
 
 <div id="site-name">
   
-  <!--22-09-2025 - Small screen - After logout - Branding - Vertical align middle - Workaround -->
-  {% if user.is_anonymous %}
-  <br />
-  {% endif %}
+  <!--09-12-2025 - Small screen - After logout - Adding a line break before the link - Workaround -->
+  <!--Note: In full screen the line break should not be there -->
+  <!--{% if request.path == '/admin/logout/' %}
+   <br />
+  {% endif %}-->
 
-   <!--11-09-2025 - You could customize something different before the link than '>>>' -->
+  <!--11-09-2025 - You could customize something different before the link than '>>>' -->
   >>>
 
   <a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a>

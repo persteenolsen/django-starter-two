@@ -57,7 +57,7 @@ INSTALLED_APPS = [
 ]
 
 # 10-12-2025 - For using the built in auth
-LOGIN_REDIRECT_URL = "/"
+# LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 
 MIDDLEWARE = [

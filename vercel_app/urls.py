@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
     
     # 10-12-2025 - For using built in auth
     path("accounts/", include("django.contrib.auth.urls")),
+
+    # 10-12-2025 - Shows the Logout formular
+    path("showlogout/", TemplateView.as_view(template_name="logout.html"), name="showlogout"),  # new
 
     path('admin/', admin.site.urls),
     path('', include('example.urls')),

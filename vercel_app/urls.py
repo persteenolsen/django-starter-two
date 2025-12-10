@@ -17,8 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    
+    # 10-12-2025 - For using built in auth
+    path("accounts/", include("django.contrib.auth.urls")),
+
     path('admin/', admin.site.urls),
     path('', include('example.urls')),
+
 ]
 
 # 09-09-2025 - Setting the Title and Header of the Django Admin

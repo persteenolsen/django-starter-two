@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
 
+# 10-12-2025 - For protecting the views by login
+from django.contrib.auth.decorators import login_required
+
 from example.models.todo import Todo
 from example.forms.todo import TodoForm
 
@@ -8,7 +11,9 @@ def list_todos(request):
     todos = Todo.objects.all()
     return render(request, 'list_todos.html', {'todos': todos})
 
-
+# Create a Todo
+# 10-12-2025 - Protected by login
+@login_required(login_url="/accounts/login/")
 def create_todo(request):
     if request.method == 'POST':
 
@@ -29,6 +34,8 @@ def create_todo(request):
    
 
 # Update a Todo
+# 10-12-2025 - Protected by login
+@login_required(login_url="/accounts/login/")
 def update_todo(request, todo_id):
 
    todo = Todo.objects.get(id=todo_id)
@@ -43,7 +50,10 @@ def update_todo(request, todo_id):
         form = TodoForm(instance=todo)
    return render(request, 'update_todo.html', {'form': form, 'todo': todo})
 
+
 # Delete a Todo
+# 10-12-2025 - Protected by login
+@login_required(login_url="/accounts/login/")
 def delete_todo(request, todo_id):
     todo = Todo.objects.get(id=todo_id)
     todo.delete()

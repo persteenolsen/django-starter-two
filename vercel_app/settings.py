@@ -41,8 +41,12 @@ ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 # Application definition
 
 INSTALLED_APPS = [
+
     'django.contrib.admin',
+
+    # 10-12-2025 - Start using the built in auth  
     'django.contrib.auth',
+
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -51,6 +55,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'example'
 ]
+
+# 10-12-2025 - For using the built in auth
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 
 MIDDLEWARE = [
     

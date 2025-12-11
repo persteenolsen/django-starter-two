@@ -1,16 +1,11 @@
-from django.http import HttpResponse
-from datetime import datetime
+from django.shortcuts import render, redirect
 
-from django.template import loader
-
+# 11-12-2025 - Returning the Templates like below allow the Logout Menu Item to work properly
 def index(request):
-  template = loader.get_template('index.html')
-  return HttpResponse(template.render())
+    return render(request, 'index.html')
 
 def about(request):
-  template = loader.get_template('about.html')
-  return HttpResponse(template.render())
+    return render(request, 'about.html')
 
 def me(request):
-  template = loader.get_template('me.html')
-  return HttpResponse(template.render())
+    return render(request, 'me.html')

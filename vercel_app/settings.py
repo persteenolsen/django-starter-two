@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     'example'
 ]
 
-# 10-12-2025 - For using the built in auth
+# 11-12-2025 - Redirect to home after logout by frontend and backend admin
 # LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 

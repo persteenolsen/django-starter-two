@@ -4,7 +4,7 @@
 
 This example shows how to use Django 5.1.11 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
 
-Last updated: 17-03-2026
+Last updated: 08-05-2026
 
 Node version selected at Vercel Cloud: 22
 
